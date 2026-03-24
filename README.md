@@ -80,7 +80,7 @@ Bash
 npm install
 npm run dev
 Open http://localhost:5173 in your browser. Enter your target URL, set your concurrency via the slider, select your attack vector, and deploy the agent.
-
+```
 
 ## 📂 Project Structure
 
