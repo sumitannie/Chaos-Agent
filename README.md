@@ -1,3 +1,13 @@
+---
+title: ChaosAgent Engine
+emoji: 🧨
+colorFrom: red
+colorTo: green
+sdk: docker
+pinned: false
+app_port: 7860
+---
+
 # 🧨 ChaosAgent Engine
 
 ![Version](https://img.shields.io/badge/version-2.0_DYNAMIC-blue.svg)
