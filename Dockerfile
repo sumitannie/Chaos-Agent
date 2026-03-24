@@ -27,5 +27,6 @@ EXPOSE 7860
 
 # Run the master startup script
 WORKDIR /app
+RUN sed -i 's/\r$//' start.sh
 RUN chmod +x start.sh
 CMD ["./start.sh"]
