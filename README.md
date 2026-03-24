@@ -110,7 +110,7 @@ chaos-agent/
 ```
 
 📊 Example Output (Local Stress Test)
-Plaintext
+```text
 [+] AI Reconnaissance Target: [https://the-internet.herokuapp.com/login](https://the-internet.herokuapp.com/login)
 [+] Mode: LOCAL
 [+] SAFETY ENGAGED: 🛡️ Java traffic rerouted to Local Server (127.0.0.1:4000)
@@ -119,3 +119,4 @@ Plaintext
 [+] Fired 7410 concurrent threads via Java Spring Boot at -> [http://127.0.0.1:4000](http://127.0.0.1:4000)
 [+] AI Diagnostic Report: The stress test indicates a significant capacity bottleneck, with over 70% of requests (5,158 out of 7,410) being dropped due to server overload. Immediate scaling or optimization of virtual thread configuration is recommended to reduce dropped requests.
 [+] Raw System Metrics: Test Successful. Target Server Capacity Reached. Successful Hits: 2252 , Dropped/Overloaded: 5158
+```
