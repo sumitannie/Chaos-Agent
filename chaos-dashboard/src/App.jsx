@@ -40,7 +40,7 @@ function App() {
     ]);
 
     try {
-      const response = await axios.post('http://localhost:3000/api/launch', { 
+      const response = await axios.post('/api/launch', { 
         url: targetUrl,
         concurrency: concurrency,
         mode: attackMode

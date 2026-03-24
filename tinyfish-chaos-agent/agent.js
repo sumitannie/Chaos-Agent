@@ -2,12 +2,18 @@ import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 dotenv.config({ path: '../.env' });
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../chaos-dashboard/dist')));
 
 const TARGET_BACKEND_URL = "http://127.0.0.1:8080/api/agent/trigger-chaos";
 
@@ -34,7 +40,6 @@ app.post('/api/launch', async (req, res) => {
     }
 
     try {
-        // 1. TINYFISH EXTRACTS PAYLOAD
         const tinyfishResponse = await fetch("https://agent.tinyfish.ai/v1/automation/run-sse", {
             method: "POST",
             headers: {
@@ -136,7 +141,7 @@ app.post('/api/launch', async (req, res) => {
     }
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 7860;
 app.listen(PORT, () => {
     console.log(`\n🚀 Dynamic AI Agent Middleman is online on Port ${PORT}`);
 });
