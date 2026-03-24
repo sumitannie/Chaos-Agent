@@ -26,34 +26,34 @@ This system dynamically targets any web application, uses a Vision-Language Mode
 ---
 
 🏗️ System Architecture
--This project utilizes a modern Microservice Architecture, separating concerns across three distinct environments:
+- This project utilizes a modern Microservice Architecture, separating concerns across three distinct environments:
 
--The Command Center (React/Vite): A dark-mode, responsive UI for deployment configuration, real-time logging, and attack vector management.
+- The Command Center (React/Vite): A dark-mode, responsive UI for deployment configuration, real-time logging, and attack vector management.
 
--The AI Orchestrator (Node.js/Express): A middleman API that injects dynamic system prompts, manages the TinyFish VLM Server-Sent Events (SSE) stream, and requests post-test diagnostic reports from DeepSeek via the Fireworks API.
+- The AI Orchestrator (Node.js/Express): A middleman API that injects dynamic system prompts, manages the TinyFish VLM Server-Sent Events (SSE) stream, and requests post-test diagnostic reports from DeepSeek via the Fireworks API.
 
--The Chaos Engine (Java Spring Boot): A high-throughput backend utilizing Java 21 Virtual Threads to simulate massive traffic spikes (up to 10,000 concurrent connections) without overwhelming the host OS network queue.
+- The Chaos Engine (Java Spring Boot): A high-throughput backend utilizing Java 21 Virtual Threads to simulate massive traffic spikes (up to 10,000 concurrent connections) without overwhelming the host OS network queue.
 
 ✨ Core Features
--Autonomous Payload Extraction (TinyFish): The Action AI visually scans the target URL, executes login flows, and extracts dynamic Auth Tokens/Cookies on the fly.
+- Autonomous Payload Extraction (TinyFish): The Action AI visually scans the target URL, executes login flows, and extracts dynamic Auth Tokens/Cookies on the fly.
 
--Extreme Concurrency: Utilizes lightweight Java Virtual Threads to generate massive network spikes, bypassing the hardware limitations of traditional Platform Threads.
+- Extreme Concurrency: Utilizes lightweight Java Virtual Threads to generate massive network spikes, bypassing the hardware limitations of traditional Platform Threads.
 
--Dual-Vector Safety Switch: * Live End-to-End: Caps concurrency at 100 threads for safe public endpoint testing.
+- Dual-Vector Safety Switch: * Live End-to-End: Caps concurrency at 100 threads for safe public endpoint testing.
 
--Local Firing Range: Reroutes up to 10,000 threads to a local dummy server to safely measure maximum hardware/network packet drop rates without risking IP bans.
+- Local Firing Range: Reroutes up to 10,000 threads to a local dummy server to safely measure maximum hardware/network packet drop rates without risking IP bans.
 
--LLM Root-Cause Analysis (DeepSeek): Automatically calculates server failure rates and generates human-readable diagnostic QA reports.
+- LLM Root-Cause Analysis (DeepSeek): Automatically calculates server failure rates and generates human-readable diagnostic QA reports.
 
 🚀 Quick Start Guide
 Prerequisites
--Node.js (v18+)
+- Node.js (v18+)
 
--Java JDK (v21+)
+- Java JDK (v21+)
 
--TinyFish API Key & Fireworks API Key
+- TinyFish API Key & Fireworks API Key
 
--
+--
 
 1. Start the Java Chaos Engine
 Navigate to your Spring Boot directory and boot the application:
@@ -64,10 +64,10 @@ Bash
 2. Start the AI Orchestrator & Local Target
 Open two separate terminals in the tinyfish-chaos-agent folder:
 
-Bash
 # Terminal 1: Boot the dummy target to absorb local stress tests
+```Bash
 node dummy-target.js 
-
+```
 # Terminal 2: Boot the AI Middleman API
 ```bash
 npm install
